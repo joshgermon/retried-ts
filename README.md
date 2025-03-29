@@ -18,7 +18,7 @@ Retrying failed asynchronous operations (like network requests) is a common requ
 ## Copy, Don't Install
 
 This library is intentionally simple. Instead of adding another dependency to your `package.json` for such a small
-utility, **I strongly encourage you to copy the `src/retry.ts` code directly into your project.**
+utility, **I strongly encourage you to copy the `src/retried.ts` code directly into your project.**
 
 **Benefits:**
 
@@ -32,15 +32,15 @@ Keep your codebase lean and maintain control over simple utilities like this!
 
 ## Usage
 
-1.  **Copy:** Copy the contents of `src/retry.ts` (including the `RetryConfig` interface and the `retry` function) into your
-    project (e.g., `src/utils/retry.ts`).
+1.  **Copy:** Copy the contents of `src/retried.ts` (including the `RetryConfig` interface and the `retry` function) into your
+    project (e.g., `src/utils/retried.ts`).
 2.  **Import:** Import the `retry` function where needed.
 3.  **Wrap:** Wrap your asynchronous function call with `retry`.
 
 ### Basic Example
 
 ```typescript
-import { retry } from "./utils/retry"; // Adjust path as needed
+import { retry } from "./utils/retried"; // Adjust path as needed
 
 async function mightFail(): Promise<string> {
     const random = Math.random();
@@ -67,7 +67,7 @@ run();
 ### Example with Options
 
 ```typescript
-import { retry, RetryConfig } from "./utils/retry"; // Adjust path
+import { retry, RetryConfig } from "./utils/retried"; // Adjust path
 
 async function fetchData(url: string): Promise<Response> {
     const response = await fetch(url);
