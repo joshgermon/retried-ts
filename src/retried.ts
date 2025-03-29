@@ -1,4 +1,4 @@
-type RetryConfig = {
+type RetriedConfig = {
     retries: number;
     strategy: "exponential" | "fixed";
     baseTimeout: number;
@@ -7,7 +7,7 @@ type RetryConfig = {
 };
 
 const DEFAULT_JITTER_MAX = 1000;
-const DEFAULT_CONFIG: RetryConfig = {
+const DEFAULT_CONFIG: RetriedConfig = {
     retries: 3,
     strategy: "exponential",
     baseTimeout: 1000,
@@ -23,10 +23,10 @@ type DelayFn = typeof defaultDelay;
 
 export async function retry<T>(
     fn: () => Promise<T>,
-    opts?: Partial<RetryConfig>,
+    opts?: Partial<RetriedConfig>,
     delayFn: DelayFn = defaultDelay,
 ): Promise<T> {
-    const config: RetryConfig = {
+    const config: RetriedConfig = {
         ...DEFAULT_CONFIG,
         ...opts,
         onRetry: opts?.onRetry,

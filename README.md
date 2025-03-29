@@ -1,13 +1,13 @@
-# retry-ts
+# retried.ts
 
 A minimal, type-safe asynchronous operation retry utility for TypeScript.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Why retry-ts?
+## Why retired?
 
 Retrying failed asynchronous operations (like network requests) is a common requirement. While libraries like
-[`async-retry`](https://github.com/vercel/async-retry) existed already in this space, `retry-ts` aims to provide:
+[`async-retry`](https://github.com/vercel/async-retry) existed already in this space, `retried.ts` aims to provide:
 
 1.  **Simplicity:** The core logic is straightforward and contained within a single, small function.
 2.  **Type Safety:** Built with TypeScript, providing clear interfaces and type checking out-of-the-box.
