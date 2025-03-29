@@ -1,0 +1,19 @@
+{
+    "name": "retry-ts",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "vitest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@vitest/ui": "^3.0.9",
+        "prettier": "^3.5.3",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.2",
+        "vitest": "^3.0.9"
+    }
+}
