@@ -3,6 +3,8 @@
 A minimal, type-safe asynchronous operation retry utility for TypeScript.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![npm version](https://img.shields.io/npm/v/retried.svg)](https://www.npmjs.com/package/retried)
 
 ## Why retired?
 
@@ -29,6 +31,14 @@ utility, **I strongly encourage you to copy the `src/retried.ts` code directly i
 - **Reduced Complexity:** Avoids potential version conflicts or the overhead of managing another dependency.
 
 Keep your codebase lean and maintain control over simple utilities like this!
+
+## I don't care, let me npm install
+
+Okay, fair enough.
+
+```
+npm install retried
+```
 
 ## Usage
 
