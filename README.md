@@ -67,7 +67,7 @@ run();
 ### Example with Options
 
 ```typescript
-import { retry, RetryConfig } from "./utils/retried"; // Adjust path
+import { retry } from "./utils/retried"; // Adjust path
 
 async function fetchData(url: string): Promise<Response> {
     const response = await fetch(url);
@@ -78,9 +78,10 @@ async function fetchData(url: string): Promise<Response> {
 }
 
 async function getImportantData() {
-    const retryOptions: Partial<RetryConfig> = {
+    const retryOptions = {
         retries: 5, // Try 5 times total (1 initial + 4 retries)
         baseTimeout: 500, // Start with 500ms delay
+        maxTimeout: 2 * 60 * 1000, // Stop once delay reaches 2 minutes
         strategy: "exponential", // Double the delay each time
         onRetry: (error) => {
             console.warn(`Attempt failed: ${error}. Retrying...`);
@@ -98,7 +99,7 @@ async function getImportantData() {
 getImportantData();
 ```
 
-## Configuration Options (`RetryConfig`)
+## Configuration Options (`RetryOptions`)
 
 You can pass an optional configuration object as the second argument to `retry`.
 

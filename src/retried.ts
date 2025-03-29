@@ -6,6 +6,8 @@ type RetriedConfig = {
     onRetry?: (error: unknown) => void;
 };
 
+export type RetriedOptions = Partial<RetriedConfig>;
+
 const DEFAULT_JITTER_MAX = 1000;
 const DEFAULT_CONFIG: RetriedConfig = {
     retries: 3,
@@ -23,7 +25,7 @@ type DelayFn = typeof defaultDelay;
 
 export async function retry<T>(
     fn: () => Promise<T>,
-    opts?: Partial<RetriedConfig>,
+    opts?: RetriedOptions,
     delayFn: DelayFn = defaultDelay,
 ): Promise<T> {
     const config: RetriedConfig = {
