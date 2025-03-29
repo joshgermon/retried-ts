@@ -98,7 +98,7 @@ async function getImportantData() {
 getImportantData();
 ```
 
-## ⚙️ Configuration Options (`RetryConfig`)
+## Configuration Options (`RetryConfig`)
 
 You can pass an optional configuration object as the second argument to `retry`.
 
@@ -127,5 +127,4 @@ integration rather than dependency installation.
 
 ## License
 
-MIT License - see the LICENSE file for details. (You'll need to add an MIT license file to your repo if you don't have
-one).
+MIT License - see the LICENSE file for details.
