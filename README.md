@@ -100,17 +100,17 @@ getImportantData();
 
 ## ⚙️ Configuration Options (`RetryConfig`)
 
-You can pass an optional configuration object as the second argument to `retry`. | Option | Type | Default | Description
-| | :------------ | :--------------------------------- | :------------ |
-:-------------------------------------------------------------------------- | | `retries` | `number` | `3` | Total
-number of attempts (initial attempt + retries). | | `baseTimeout` | `number` | `100` | Initial delay in milliseconds
-before the first retry. | | `maxTimeout` | `number` | `300000` | Maximum delay in milliseconds between retries. | |
-`strategy` | `'exponential'` \| `'fixed'` | `exponential` | `'exponential'`: Doubles the timeout each retry. `'fixed'`:
-Keeps timeout constant. | | `onRetry` | `(error: unknown) => void` \| `undefined` | `undefined` | Callback function
-executed _before_ each retry attempt (after a failure). |
+You can pass an optional configuration object as the second argument to `retry`.
 
-_Note: The actual delay includes a small random jitter (0-1000ms by default) added to the calculated `timeout` to help
-prevent thundering herd issues._
+| Option       | Type                                    | Default   | Description                                                                                      |
+|--------------|-----------------------------------------|-----------|--------------------------------------------------------------------------------------------------|
+| `retries`    | `number`                                | `3`       | Total number of attempts (initial attempt + retries).                                            |
+| `baseTimeout`| `number`                                | `100`     | Initial delay in milliseconds before the first retry.                                           |
+| `maxTimeout` | `number`                                | `300000`  | Maximum delay in milliseconds between retries.                                                   |
+| `strategy`   | `'exponential'` \| `'fixed'`           | `exponential` | `'exponential'`: Doubles the timeout each retry. `'fixed'`: Keeps timeout constant.            |
+| `onRetry`    | `(error: unknown) => void` \| `undefined` | `undefined` | Callback function executed _before_ each retry attempt (after a failure).                        |
+
+_Note: The actual delay includes a small random jitter (0-1000ms by default) added to the calculated `timeout` to help prevent thundering herd issues._
 
 ## Testing
 
